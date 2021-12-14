@@ -49,7 +49,7 @@ const Country = ({ country }) => {
             </div>
           </div>
         </div>
-        
+
         <div className={styles.container_right}>
           <div className={styles.details_panel}>
             <h4 className={styles.details_panel_heading}>Details</h4>
@@ -90,7 +90,9 @@ const Country = ({ country }) => {
 
             <div className={styles.details_panel_row}>
               <div className={styles.details_panel_label}>Gini</div>
-              <div className={styles.details_panel_value}>{country.gini || 0} %</div>
+              <div className={styles.details_panel_value}>
+                {country.gini || 0} %
+              </div>
             </div>
 
             <div className={styles.details_panel_borders}>
@@ -100,7 +102,10 @@ const Country = ({ country }) => {
 
               <div className={styles.details_panel_borders_container}>
                 {borders.map(({ flag, name }) => (
-                  <div className={styles.details_panel_borders_country}>
+                  <div
+                    className={styles.details_panel_borders_country}
+                    key={country.name}
+                  >
                     <img src={flag} alt={name}></img>
 
                     <div className={styles.details_panel_borders_name}>
@@ -122,18 +127,18 @@ export default Country;
 export const getStaticPaths = async () => {
   const res = await fetch("https://restcountries.com/v2/all");
   const countries = await res.json();
-  
+
   const paths = countries.map((country) => ({
     params: {
-      id: country.alpha3Code
-    }
-  }))
+      id: country.alpha3Code,
+    },
+  }));
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async ({ params }) => {
   const country = await getCountry(params.id);
