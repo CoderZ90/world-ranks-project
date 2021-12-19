@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"); */
+@import url('http://fonts.cdnfonts.com/css/circular-std');
 :root {
   --text-color: #124a63;
   --text-color-secondary: #b3c5cd;
@@ -9,7 +10,7 @@
   --background-color-dark: #eef3f6;
   --background-color-light: white;
 
-  --font-family: "Poppins", sans-serif;
+  --font-family: "Circular Std", sans-serif;
   --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
 }
 
