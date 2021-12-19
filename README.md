@@ -1,5 +1,5 @@
 ## Check the live website here
-Click on this link to visit the website 🚀 - [https://worldranks-phi.vercel.app](https://worldranks-phi.vercel.app)
+Click on this link to visit the website 🚀 - [https://worldrankers.vercel.app](https://worldrankers.vercel.app)
 
 
 ## To get started
